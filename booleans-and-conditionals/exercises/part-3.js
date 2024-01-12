@@ -1,10 +1,55 @@
 let engineIndicatorLight = 'red blinking';
 let fuelLevel = 21000;
 let engineTemperature = 1200;
+let commandOverride = true
+
+// a)
+if (fuelLevel > 20000 && engineTemperature <= 2500){
+    console.log("Full tank. Engines good.")
+}
+
+//b)
+if (fuelLevel > 10000 && engineTemperature <= 2500){
+    console.log("Fuel lever above 50%. Engines good.")
+}
+
+//c)
+
+if (fuelLevel > 5000 || engineTemperature >= 2500){
+    console.log("Fuel leverl above 25%. Engines good.")
+}
+
+
+//d)
+if (fuelLevel <= 5000 || engineTemperature > 2500){
+    console.log("Check fuel level. Engines running hot.")
+}
+
+//e)
+
+if (fuelLevel <1000 || engineTemperature > 3500 || engineIndicatorLight === "red blinking"){
+    console.log("ENGINE FAILURE IMMINENT!")
+}
+
+//f)
+
+else {
+    console.log("Fuel and engine status pending...")
+}
+
+//Command override
+
+if (fuelLevel > 20000 && engineIndicatorLight !== "Red blinking" || commandOverride === true) {
+    console.log("Cleared to launch!")
+ } else {
+        console.log("Launch scrubbed!")
+    }
 
 /* 5) Implement the following checks using if/else if/else statements:
 
 a) If fuelLevel is above 20000 AND engineTemperature is at or below 2500, print "Full tank. Engines good."
+
+
 
 b) If fuelLevel is above 10000 AND engineTemperature is at or below 2500, print "Fuel level above 50%.  Engines good."
 
