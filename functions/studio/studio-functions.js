@@ -9,16 +9,19 @@ function reverseCharacters(str) {
         if (typeof str === "number") {
             str = str.toString()
                 str = str.split('').reverse().join('');
-                    str += ""
+                //  console.log(typeof(str));
+                    return Number(str);
+                       
+                        
         } else {
             str = str.split('').reverse().join('');
         }
-        // console.log(typeof(str));
+            // console.log(typeof(str));
         return str
 }
 
-// console.log(reverseCharacters(1232));
-
+console.log(reverseCharacters(123456789));
+console.log("<><<><><><><><><><><><<><>><><>");
 
 
 
@@ -52,13 +55,12 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 function reverseArray(array) {
     let emptyNest = [];
     for (i = 0; i < array.length; i++){
-         emptyNest += reverseCharacters(array[i]) + " ";
-
+         emptyNest.push(reverseCharacters(array[i]));
+// console.log(typeof(i))
     }
-       
+    emptyNest.reverse();
     return emptyNest
 }
-
 console.log(reverseArray(arrayTest1));
 
 // Bonus Missions
