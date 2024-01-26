@@ -104,10 +104,10 @@ console.log("\n<><><><><><><><><><><><><><><><><><><>\n");
 
 function makeDiamond(height) {
     let diamond = ''
-diamond += makeIsoscelesTriangle(5);
+diamond += makeIsoscelesTriangle(height);
         for (let i = height; i >= 1; i--) {
             diamond += makeSpaceLine(height - i, 2 * i - 1) + '\n';
 }
                 return diamond
 }
-console.log(makeDiamond(5));
+console.log(makeDiamond(7));
