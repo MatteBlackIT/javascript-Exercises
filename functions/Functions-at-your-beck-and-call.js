@@ -5,7 +5,7 @@ console.log("\nThis is where the fun begins.\n                       -Anakin Sky
 function makeLine(size) {
     let line = ''
         for (let i = 0; i < size; i++) {
-            line += '#'
+            line += '*'
         }
                 return line;
 }
@@ -110,4 +110,4 @@ diamond += makeIsoscelesTriangle(height);
 }
                 return diamond
 }
-console.log(makeDiamond(7));
+console.log(makeDiamond(25));
