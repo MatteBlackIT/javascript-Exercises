@@ -7,7 +7,6 @@ function checkFuel(level) {
     return 'red';
   }
 }
-
 function holdStatus(arr){
   if (arr.length < 7) {
     return `Spaces available: ${7-arr.length}.`;
@@ -32,19 +31,29 @@ let aGustOfWind = function(aBigGust) {
   };
 
 
+
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
 
 
-console.log(aGustOfWind(200000));
-console.log('----------------')
-console.log(glitchInMatrix(haul));
-console.log("-----------------")
+let systemGlitch = function(glitch) {
+  let loot = [];
+    for (let i = 0; i < glitch.length; i++){
+      let score = glitch[i];
+        if (score === "gold" || score === "AE-35 unit"){
+            loot.push(glitch.splice(i,1)[0]);
+              
+        }
+        
+      }
+      glitch.push("Elon Musk", "loose astroids");
+    return loot;
+};
+
+
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
-console.log(cargoHold);
-
 
 
 
@@ -73,6 +82,7 @@ console.log(cargoHold);
 // Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.*/
 
 
+
  
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
@@ -82,4 +92,10 @@ console.log(cargoHold);
 
 
 
+function irs(levelOfFuel, itemsInCargo) {
+  let arr = glitch(itemsInCargo);
+let receipt = `Raided ${aGustOfWind(aBigGust)}kg of fuel from the tanks, and stole ${arr[1]} and ${arr[2]} from the cargo hold`
+      return receipt 
+};
 
+console.log(receipt);
