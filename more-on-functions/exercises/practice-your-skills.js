@@ -13,3 +13,16 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let twoJobFunc = arr.map(function(kenway) {
+    if (typeof kenway === 'number') {
+       return kenway*3
+            } else if (typeof kenway === 'string'){
+                return "ARRR!"   
+            } else {
+                return kenway
+            }
+});
+
+console.log(twoJobFunc);
+console.log(arr);

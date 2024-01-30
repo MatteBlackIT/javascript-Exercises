@@ -16,13 +16,37 @@ function holdStatus(arr){
   } else {
     return "Full";
   }
+  
 }
+let aGustOfWind = function(aBigGust) {
+  if (checkFuel(aBigGust)==='green'){
+    return aBigGust - 99999;
+    } 
+    else if (checkFuel(aBigGust) === 'yellow') {
+      return aBigGust - 49999;
+      } 
+      else {
+        return aBigGust;
+  }
+
+  };
+
 
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
+
+
+console.log(aGustOfWind(200000));
+console.log('----------------')
+console.log(glitchInMatrix(haul));
+console.log("-----------------")
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
+console.log(cargoHold);
+
+
+
 
 /* Steal some fuel from the shuttle:
  * /
@@ -46,12 +70,16 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Don’t get hasty, matey! Remember to test your function.
 
-/* Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.
- * /
+// Finally, you need to print a receipt for the accountant. Don’t laugh! That genius knows MATH and saves us more gold than you can imagine.*/
+
+
  
 //a). Define a function called irs that can take fuelLevel and cargoHold as arguments.
 	
 //b). Call your anonymous fuel and cargo functions from within irs.
 
-//c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
+//c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold." */
+
+
+
 
