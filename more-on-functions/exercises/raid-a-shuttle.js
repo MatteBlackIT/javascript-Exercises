@@ -92,10 +92,9 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 
 
-function irs(levelOfFuel, itemsInCargo) {
-  let arr = glitch(itemsInCargo);
-let receipt = `Raided ${aGustOfWind(aBigGust)}kg of fuel from the tanks, and stole ${arr[1]} and ${arr[2]} from the cargo hold`
-      return receipt 
+let irs = function(levelOfFuel, itemsInCargo) {
+  let arr = loot(itemsInCargo);
+  return `Raided ${aGustOfWind(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
 };
 
-console.log(receipt);
+console.log(levelOfFuel, itemsInCargo);
