@@ -13,8 +13,8 @@ let superChimpOne = {
    species: "Chimpanzee",
    mass: 9,
    age: 6,
-   AstronautID: 1,
-   move: randomSelection(baseSteps),
+   astronautID: 1,
+   move: function(){return Math.floor(Math.random()*11)},
 };
 
 let salamander = {
@@ -22,8 +22,8 @@ let salamander = {
    species: "Axolotl Salamander",
    mass: 0.1,
    age: 5,
-   AstronautID: 2,
-   move: randomSelection(baseSteps),
+   astronautID: 2,
+   move: function(){return Math.floor(Math.random()*11)},
 };
 
 let spaceChimp = {
@@ -32,7 +32,7 @@ let spaceChimp = {
    mass: 11,
    age: 6,
    astronautID: 3,
-   move: randomSelection(baseSteps),
+   move: function(){return Math.floor(Math.random()*11)},
 
 };
 
@@ -42,7 +42,7 @@ let dog = {
    mass: 14,
    age: 5,
    astronautID: 4,
-   move: randomSelection(baseSteps),
+   move: function(){return Math.floor(Math.random()*11)},
 };
 
    thing = {
@@ -51,32 +51,18 @@ let dog = {
    mass: 0.0000000001,
    age: 1,
    astronautID: 5,
-   move: randomSelection(baseSteps)
+   move: function(){return Math.floor(Math.random()*11)}
 };
 
 
-let contestantArray = [];
-contestantArray.push(salamander, spaceChimp, superChimpOne, thing, dog);
+let spaceChallengers = [];
+spaceChallengers.push(salamander, spaceChimp, superChimpOne, thing, dog);
 
-contestantArray.forEach(animal => {
+spaceChallengers.forEach(animal => {
    console.log(`${animal.name} is a ${animal.species}. They are ${animal.age} years old and ${animal.mass} kilograms. Their ID is ${animal.astronautID}.\n`);
 });
 
-function fitnessTest(contestants){
-   let results = [], numSteps, turns;
-   for (let i = 0; i < contestants.length; i++){
-       numSteps = 0;
-       turns = 0;
-       while(numSteps < 20){
-       numSteps += contestants[i].move();
-       turns++;
-       }
-       results.push(`${contestants[i].name} took ${turns} turns to take 20 steps.`);
-   }
-   return results;
-  }
 
-  console.log(fitnessTest(results));
 
 // After you have created the other object literals, add the astronautID property to each one.
 
@@ -85,3 +71,22 @@ function fitnessTest(contestants){
 // Print out the relevant information about each animal.
 
 // Start an animal race!
+
+function fitnessTest(arr) {
+   let results = [], numSteps, turns;
+      for (let i=0; i<arr.length; i++) {
+          numSteps = 0
+          turns = 0
+      while (numSteps < 20) {
+         numSteps += arr[i].move();
+         turns++
+      }
+      
+       
+    results.push((`${arr[i].name} took ${turns} turn(s) to take 20 steps.`));
+   }
+return results
+};
+
+console.log(fitnessTest(spaceChallengers));
+
