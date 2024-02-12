@@ -5,3 +5,27 @@
 // However, if the denominator is zero you should throw the error, "Attempted to divide by zero."
 
 // Code your divide function here:
+const input = require('readline-sync');
+
+function divide(numerator, denominator){
+
+        if (denominator === 0){
+       throw new Error("divide by Zero(0) error")
+        } else {
+    return numerator/denominator;
+        }
+};
+
+
+numerator = input.question("Enter a Numerator. ");
+denominator = input.question("Enter a Denominator. ");
+
+
+
+try {
+    const result = divide(numerator, denominator);
+    console.log("Result:", result);
+} catch (error) {
+    // Handle the error if division by zero occurs
+    console.log("Error:", error.message);
+}
