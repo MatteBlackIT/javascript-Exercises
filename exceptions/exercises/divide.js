@@ -8,17 +8,16 @@
 const input = require('readline-sync');
 
 function divide(numerator, denominator){
-
         if (denominator === 0){
-       throw new Error("divide by Zero(0) error")
+       throw Error("divide by Zero(0) error.");
         } else {
     return numerator/denominator;
         }
 };
 
 
-numerator = input.question("Enter a Numerator. ");
-denominator = input.question("Enter a Denominator. ");
+const numerator = input.question("Enter a Numerator. ");
+const denominator = input.question("Enter a Denominator. ");
 
 
 
