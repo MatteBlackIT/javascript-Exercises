@@ -90,3 +90,14 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold." */
 
+<<<<<<< HEAD
+=======
+
+
+let irs = function(levelOfFuel, itemsInCargo) {
+  let arr = loot(itemsInCargo);
+  return `Raided ${aGustOfWind(fuelLevel)} kg of fuel from the tanks, and stole ${arr[0]} and ${arr[1]} from the cargo hold.`
+};
+
+console.log(levelOfFuel, itemsInCargo);
+>>>>>>> 3bc1ea2fb0c5ff292919da140dc1b6e00b35f03e
